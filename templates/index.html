@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Main</title>
+</head>
+	{% if podatki['uspeh'] %}
+	<i>Uspešno sem se povezal na database.</i>
+	{% else %}
+	<i><b>Neuspešno</b> sem se povezal na database.</i>
+	{% endif %}
+<body>
+    <form action="/" method="post">
+	<label for="visina">Višina (cm): </label><br>
+	<input type="text" id="visina" name="visina" value="{{podatki['visina']}}"><br>
+	<label for="teza">Teza (kg):</label><br>
+	<input type="text" id="teza" name="teza" value="{{podatki['teza']}}">
+	 <input type="submit" value="IZRAČUNAJ">
+	</form>
+	{% if podatki['itm'] %}
+	<i>Vaš ITM je {{podatki["itm"]}}</i>
+	{% endif %}
+</body>
+</html>
